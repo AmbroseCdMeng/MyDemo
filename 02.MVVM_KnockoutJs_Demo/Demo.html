@@ -56,7 +56,14 @@
         </tbody>
     </table>
 </div>
-
+<hr>
+<div id="div4">
+    <label><span><b>Year:</b></span><input type="text" data-bind="value:Year"></label><br>
+    <label><span><b>Month:</b></span><input type="text" data-bind="value:Month"></label><br>
+    <label><span><b>Day:</b></span><input type="text" data-bind="value:Day"></label><br>
+    <label><span><b>Date:</b></span><span data-bind="html:DateStr"></span></label><br>
+    <label><span><b>Date:</b></span><input data-bind="value:Date"></label>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="knockout-3.5.0.js"></script>
@@ -145,7 +152,39 @@
             });//自定义排序
             */
 
+            /*计算属性(基本)*/
+            self.Year = ko.observable();
+            self.Month = ko.observable();
+            self.Day = ko.observable();
+            self.DateStr = ko.computed(function () {
+                //ko.observable 是监控方法 所以 self.Year 等也是方法。
+                return (self.Year() || 2008) + '年' + (self.Month() || 1) + '月' + (self.Day() || 1) + '日';//为Undefined时再给个默认值
+            }, self);
 
+            /*计算属性(中级)*/
+            self.Date = ko.computed({
+                read: function () {
+                    return (self.Year() || 2008) + '年' + (self.Month() || 1) + '月' + (self.Day() || 1) + '日';
+                },
+                write: function (value) {
+                    var indexOfYear = value.indexOf('年');
+                    var indexOfMonth = value.indexOf('月');
+                    var indexOfDay = value.indexOf('日');
+
+                    var year = value.substring(0, indexOfYear);
+                    var month = value.substring(indexOfYear + 1, indexOfMonth);
+                    var day = value.substring(indexOfMonth + 1, indexOfDay);
+
+                    if (!/^([12]\d{3})$/.test(year) || !/^(0?[1-9]|1[012])$/.test(month) || !/^(0?[1-9]|[12]\d|3[01])$/.test(day)){
+                        alert('请输入正确的日期');
+                        return false;
+                    }
+                    self.Year(year);
+                    self.Month(month);
+                    self.Day(day);
+                },
+                owner: this
+            });
         };
         ko.applyBindings(viewModel);
 
