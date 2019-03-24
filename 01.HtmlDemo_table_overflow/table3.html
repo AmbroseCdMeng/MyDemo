@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<style>
+    table {
+        /*margin: auto;*/
+        /*width: 80%;*/
+        border-collapse: collapse;
+    }
+
+    td {
+        border: solid 1px #000;
+        width: 100px;
+        height: 20px;
+        text-align: center;
+    }
+
+    thead {
+        background-color: #888888;
+        border: black;
+        text-align: center;
+    }
+
+
+    /*左上角固定*/
+    #div1 {
+        position: fixed;
+        height: 20px;
+        width: 200px;
+    }
+
+    #tb1 {
+
+    }
+
+
+    /*横向表头 纵向固定 横向跟随滚动*/
+    #div2 {
+        position: absolute;
+        height: 20px;
+        width: 1400px;
+        margin-left: 200px;
+
+        overflow: hidden;
+    }
+
+    #tb2 {
+        width: 2000px;
+        position: absolute;
+    }
+
+    /*纵向表头 横向固定 纵向跟随滚动*/
+    #div3 {
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        margin-top: 20px;
+        overflow-y: hidden;
+    }
+
+    #tb3 {
+        height: 200px;
+        position: absolute;
+    }
+
+
+    #div4 {
+        position: absolute;
+        /*height: 200px;*/
+        /*width: 1400px;*/
+        height: 217px;
+        width: 1417px;
+        margin-top: 20px;
+        margin-left: 200px;
+
+        overflow: auto;
+    }
+
+    #tb4 {
+        width: 2000px;
+        height: 200px;
+    }
+
+    /*滚动条样式*/
+    div::-webkit-scrollbar {
+        width: 17px; /*垂直滚动条的宽度*/
+        height: 17px; /*水平滚动条的宽度*/
+    }
+
+    /*滑块样式*/
+    div::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: bisque;
+    }
+
+    /*轨道样式*/
+    div::-webkit-scrollbar-track {
+        border-radius: 0;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: aquamarine;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div1">
+    <table id="tb1">
+        <thead>
+        <tr>
+            <td>固定</td>
+            <td>固定</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div id="div2">
+    <table id="tb2">
+        <thead>
+        <tr>
+            <td>纵向固定1</td>
+            <td>纵向固定2</td>
+            <td>纵向固定3</td>
+            <td>纵向固定4</td>
+            <td>纵向固定5</td>
+            <td>纵向固定6</td>
+            <td>纵向固定7</td>
+            <td>纵向固定8</td>
+            <td>纵向固定9</td>
+            <td>纵向固定10</td>
+            <td>纵向固定11</td>
+            <td>纵向固定12</td>
+            <td>纵向固定13</td>
+            <td>纵向固定14</td>
+            <td>纵向固定15</td>
+            <td>纵向固定16</td>
+            <td>纵向固定17</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div id="div3">
+    <table id="tb3">
+        <thead>
+        <tr>
+            <td>横向固定1</td>
+            <td>横向固定1</td>
+        </tr>
+        <tr>
+            <td>横向固定2</td>
+            <td>横向固定2</td>
+        </tr>
+        <tr>
+            <td>横向固定3</td>
+            <td>横向固定3</td>
+        </tr>
+        <tr>
+            <td>横向固定4</td>
+            <td>横向固定4</td>
+        </tr>
+        <tr>
+            <td>横向固定5</td>
+            <td>横向固定5</td>
+        </tr>
+        <tr>
+            <td>横向固定6</td>
+            <td>横向固定6</td>
+        </tr>
+        <tr>
+            <td>横向固定7</td>
+            <td>横向固定7</td>
+        </tr>
+        <tr>
+            <td>横向固定8</td>
+            <td>横向固定8</td>
+        </tr>
+        <tr>
+            <td>横向固定9</td>
+            <td>横向固定9</td>
+        </tr>
+        <tr>
+            <td>横向固定10</td>
+            <td>横向固定10</td>
+        </tr>
+        <tr>
+            <td>横向固定11</td>
+            <td>横向固定11</td>
+        </tr>
+        <tr>
+            <td>横向固定12</td>
+            <td>横向固定12</td>
+        </tr>
+        <tr>
+            <td>横向固定13</td>
+            <td>横向固定13</td>
+        </tr>
+        <tr>
+            <td>横向固定13</td>
+            <td>横向固定13</td>
+        </tr>
+        <tr>
+            <td>横向固定14</td>
+            <td>横向固定14</td>
+        </tr>
+        <tr>
+            <td>横向固定15</td>
+            <td>横向固定15</td>
+        </tr>
+        <tr>
+            <td>横向固定16</td>
+            <td>横向固定16</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div id="div4">
+    <table id="tb4">
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+            <td>数据2</td>
+            <td>数据3</td>
+            <td>数据4</td>
+            <td>数据5</td>
+            <td>数据6</td>
+            <td>数据7</td>
+            <td>数据8</td>
+            <td>数据9</td>
+            <td>数据10</td>
+            <td>数据11</td>
+            <td>数据12</td>
+            <td>数据13</td>
+            <td>数据14</td>
+            <td>数据15</td>
+            <td>数据16</td>
+            <td>数据17</td>
+        </tr>
+    </table>
+</div>
+<script>
+
+    var div4 = $("#div4").get(0);
+    var tb2 = $("#tb2").get(0);
+    var tb3 = $("#tb3").get(0);
+
+    div4.onscroll = function () {
+        tb2.style.left = div4.scrollLeft * -1 + 'px'
+        tb3.style.top = div4.scrollTop * -1 + 'px';
+    }
+
+    // var div4=document.getElementById('div4');
+    // var tb2=document.getElementById('tb2');
+    // div4.onscroll=function(){
+    //     tb2.style.left  = div4.scrollLeft*-1 +'px'
+    // }
+</script>
+</body>
+</html>
+
