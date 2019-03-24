@@ -16,8 +16,45 @@
 <hr>
 
 <div id="div2">
-<h3>option绑定</h3>
-    <select name="selectList" id="selectList" data-bind="optionList"></select>
+    <h3>option绑定</h3>
+    <label for="selectList">
+        <select name="selectList" id="selectList"
+                data-bind="options:optionList, optionsValue:'Value', optionsText:'Text', selectedOptions:selectedOptions">
+        </select>
+        <br>
+    </label>
+    <label for="">
+        <span>选中的键值：</span><b data-bind="html:selectedOptions"></b><br>
+    </label>
+</div>
+<hr>
+
+<div id="div3">
+    <h3>列表（数组）绑定</h3>
+    <table>
+        <thead>
+        <tr>
+            <td>序号</td>
+            <td>ID</td>
+            <td>英文名</td>
+            <td>中文名</td>
+            <td>地址</td>
+            <td>星级</td>
+            <td>描述</td>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach:hotelList">
+        <tr>
+            <td data-bind="html:$index"></td>
+            <td data-bind="html:id"></td>
+            <td data-bind="html:englishName"></td>
+            <td data-bind="html:chineseName"></td>
+            <td data-bind="html:address"></td>
+            <td data-bind="html:star"></td>
+            <td data-bind="html:description"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
@@ -30,9 +67,85 @@
         var viewModel = function () {
             var self = this;
             /*基本绑定*/
-            this.baseBind = ko.observable();
+            self.baseBind = ko.observable();
 
             /*option绑定*/
+            var list = [{'Value': '', 'Text': '--请选择--'},
+                {'Value': '1', 'Text': "HTML"},
+                {'Value': '2', 'Text': "JQuery"},
+                {'Value': '3', 'Text': "KnockoutJS"}];
+            self.optionList = ko.observableArray(list);
+            self.selectedOptions = ko.observable();
+
+
+            /*数组绑定*/
+            var hotelList = [
+                {
+                    id: 1,
+                    englishName: 'Daiwa Roynet Hotel Nishi-Shinjuku',
+                    chineseName: '西新宿大和鲁内酒店',
+                    address: '东京新宿区',
+                    star: '5',
+                    description: '提供共用休息室'
+                },
+                {
+                    id: 2,
+                    englishName: 'Compact Cozy Suite Room',
+                    chineseName: '简舒套房',
+                    address: '东京新宿区',
+                    star: '3',
+                    description: '所有公寓均提供阳台、带微波炉的小厨房、带浴缸的私人浴室、冰箱以及水壶'
+                },
+                {
+                    id: 3,
+                    englishName: 'Mustard Hotel Shibuya',
+                    chineseName: '涩谷芥末酒店',
+                    address: '东京涩谷区',
+                    star: '3',
+                    description: '距离忠犬八公像1.1公里，提供共用休息室、酒吧、24小时前台和免费WiFi'
+                },
+                {
+                    id: 4,
+                    englishName: 'GuoMaoDaJiuDian',
+                    chineseName: '北京国贸大酒店',
+                    address: '北京朝阳区',
+                    star: '5',
+                    description: '连锁品牌（香格里拉） 奢华酒店'
+                },
+                {
+                    id: 5,
+                    englishName: 'LiSiKaErDun',
+                    chineseName: '北京丽思卡尔顿酒店',
+                    address: '北京朝阳区',
+                    star: '5',
+                    description: '所有房间内均提供万豪品牌的全新“REVIVE”床具，液晶电视、小冰箱、保险箱等基础设施一应俱全'
+                },
+                {
+                    id: 6,
+                    englishName: 'Vienna',
+                    chineseName: '维也纳酒店（深圳福华路店）',
+                    address: '广东省深圳市福田区',
+                    star: '5',
+                    description: '酒店毗邻华强北商业圈，前往香港的皇岗口岸车乘5分钟'
+                }];
+            self.hotelList = ko.observableArray(hotelList);
+            /*数组绑定的一些操作方法*/
+            /*
+            hotelList.push({id:'99', englishName:'Unknow', chineseName:'未知', address:'地球', star:10, description:'海市蜃楼'});//追加列表
+            hotelList.pop();//删除最后一个元素并返回其值
+            hotelList.unshift({id:'007'});//在数组开始处新增一个元素
+            hotelList.shift();//删除第一个元素并返回其值
+            hotelList.reverse();//反转顺序
+            hotelList.splice(1, 3);//截取并返回数组形式（从第一个元素开始，截取三个元素）
+            hotelList.remove(function (item) {
+                return item.star < 4;
+            });//移除指定元素
+            hotelList.sort(function (left, right) {
+                return left.star > right.star ? -1 : 1;// 返回数字  0  小于0  大于0
+            });//自定义排序
+            */
+
+
         };
         ko.applyBindings(viewModel);
 
