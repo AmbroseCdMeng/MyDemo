@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+
+</head>
+<body>
+<div id="div1">
+    <h3>基本绑定</h3>
+    <label>
+        <span>输入：</span><input data-bind="value:baseBind" type="text"/><br>
+        <span>绑定：</span><span><b data-bind="html:baseBind"></b></span>
+    </label>
+</div>
+<hr>
+
+<div id="div2">
+<h3>option绑定</h3>
+    <select name="selectList" id="selectList" data-bind="optionList"></select>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="knockout-3.5.0.js"></script>
+</html>
+
+<script>
+    $(document).ready(function () {
+        var viewModel = function () {
+            var self = this;
+            /*基本绑定*/
+            this.baseBind = ko.observable();
+
+            /*option绑定*/
+        };
+        ko.applyBindings(viewModel);
+
+    })
+</script>
