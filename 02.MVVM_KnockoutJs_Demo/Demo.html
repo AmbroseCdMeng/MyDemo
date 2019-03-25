@@ -58,6 +58,7 @@
 </div>
 <hr>
 <div id="div4">
+    <h3>计算属性</h3>
     <label><span><b>Year:</b></span><input type="text" data-bind="value:Year"></label><br>
     <label><span><b>Month:</b></span><input type="text" data-bind="value:Month"></label><br>
     <label><span><b>Day:</b></span><input type="text" data-bind="value:Day"></label><br>
@@ -66,14 +67,30 @@
 </div>
 <hr>
 <div id="div5">
-    <label><span><b data-bind="html:times">0</b></span></label>
+    <h3>事件绑定绑定 & visible 绑定 & style 绑定</h3>
+    <label><span><b data-bind="html:times,visible:times()<20">0</b></span></label>
     <input type="button" value="click it" data-bind="click:addTimes">
 </div>
-<hr>
 <div id="div6">
     <label><span><b data-bind="html:times, style:{color:indexColor}">0</b></span></label>
     <input type="button" value="click it" data-bind="event:{click:addTimes, mouseover:mouseOver, mouseout:mouseOut}">
 </div>
+<hr>
+<div id="div7">
+    <h3>自定义组件</h3>
+    <!--以下代码放在自定义的组件中-->
+    <!--<label>-->
+        <!--<input type="text" data-bind="value:MessageText">-->
+    <!--</label>-->
+    <!--<button id="send" data-bind="click:Send">Send</button>-->
+    <!--<ul data-bind="foreach:MessageList">-->
+        <!--<li><p data-bind="html:message">文本内容</p><b data-bind="html:account">用户名</b></li>-->
+    <!--</ul>-->
+</div>
+<!--两种方式绑定自定义组件-->
+<div id="div8" data-bind="component:'MessageAndList'"></div>
+<div id="div9" data-bind="component:{name:'MessageAndList'}"></div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="knockout-3.5.0.js"></script>
@@ -202,7 +219,7 @@
                 var times = self.times();
                 times += 1;
                 self.times(times);
-            }
+            };
 
             /*多事件绑定 & style 绑定*/
             self.indexColor = ko.observable('black');
@@ -213,6 +230,29 @@
                 self.indexColor('Black');
             };
 
+            /*自定义组件*/
+            ko.components.register(
+                'MessageAndList',{//第一个参数  自定义组件名
+                    //第二个参数  JSON 对象    含 2 个属性     viewModel  template
+                    viewModel:function () {
+                        var u_self = this;
+                        u_self.Account = ko.observable('CdMeng');
+                        u_self.MessageText = ko.observable('');
+                        u_self.Send = function () {
+                            u_self.MessageList.push({account:u_self.Account(),message:u_self.MessageText()});
+                            u_self.MessageText('');
+                        };
+                        u_self.MessageList = ko.observableArray([]);
+                    },
+                    template:'<label>\n' +
+                        '        <input type="text" data-bind="value:MessageText">\n' +
+                        '    </label>\n' +
+                        '    <button id="send" data-bind="click:Send">Send</button>\n' +
+                        '    <ul data-bind="foreach:MessageList">\n' +
+                        '        <li><p data-bind="html:message"></p><b data-bind="html:account"></b></li>\n' +
+                        '    </ul>'
+                }
+            );
         };
         ko.applyBindings(viewModel);
 
