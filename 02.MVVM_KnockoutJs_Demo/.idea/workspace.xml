@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e7b66b6-0977-4b48-a0c8-46c2860097a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/Demo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" afterDir="false" />
@@ -38,11 +37,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="179" column="37" selection-start-line="179" selection-start-column="37" selection-end-line="179" selection-end-column="37" />
+            <state relative-caret-position="580">
+              <caret line="74" column="115" selection-start-line="74" selection-start-column="115" selection-end-line="74" selection-end-column="115" />
               <folding>
-                <element signature="e#1804#1990#0" />
-                <element signature="e#2151#3936#0" />
+                <element signature="e#2266#2452#0" />
+                <element signature="e#2613#4398#0" />
+                <element signature="e#4500#5154#0" />
+                <element signature="e#5355#5553#0" />
+                <element signature="e#5624#6636#0" />
               </folding>
             </state>
           </provider>
@@ -143,11 +145,12 @@
       <workItem from="1553427198853" duration="2048000" />
       <workItem from="1553430072157" duration="3527000" />
       <workItem from="1553437805129" duration="3439000" />
+      <workItem from="1553523626723" duration="1241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9014000" />
+    <option name="totallyTimeSpent" value="10255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -186,11 +189,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="179" column="37" selection-start-line="179" selection-start-column="37" selection-end-line="179" selection-end-column="37" />
+        <state relative-caret-position="580">
+          <caret line="74" column="115" selection-start-line="74" selection-start-column="115" selection-end-line="74" selection-end-column="115" />
           <folding>
-            <element signature="e#1804#1990#0" />
-            <element signature="e#2151#3936#0" />
+            <element signature="e#2266#2452#0" />
+            <element signature="e#2613#4398#0" />
+            <element signature="e#4500#5154#0" />
+            <element signature="e#5355#5553#0" />
+            <element signature="e#5624#6636#0" />
           </folding>
         </state>
       </provider>

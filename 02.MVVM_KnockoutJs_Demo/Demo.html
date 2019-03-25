@@ -64,6 +64,16 @@
     <label><span><b>Date:</b></span><span data-bind="html:DateStr"></span></label><br>
     <label><span><b>Date:</b></span><input data-bind="value:Date"></label>
 </div>
+<hr>
+<div id="div5">
+    <label><span><b data-bind="html:times">0</b></span></label>
+    <input type="button" value="click it" data-bind="click:addTimes">
+</div>
+<hr>
+<div id="div6">
+    <label><span><b data-bind="html:times, style:{color:indexColor}">0</b></span></label>
+    <input type="button" value="click it" data-bind="event:{click:addTimes, mouseover:mouseOver, mouseout:mouseOut}">
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="knockout-3.5.0.js"></script>
@@ -185,6 +195,24 @@
                 },
                 owner: this
             });
+
+            /*事件绑定*/
+            self.times = ko.observable(0);
+            self.addTimes = function () {
+                var times = self.times();
+                times += 1;
+                self.times(times);
+            }
+
+            /*多事件绑定 & style 绑定*/
+            self.indexColor = ko.observable('black');
+            self.mouseOver = function () {
+                self.indexColor('red');
+            };
+            self.mouseOut = function() {
+                self.indexColor('Black');
+            };
+
         };
         ko.applyBindings(viewModel);
 
