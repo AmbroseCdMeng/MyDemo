@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo2</title>
+</head>
+<body>
+
+<div>
+    <div>
+        <label>姓名：</label>
+        <label><input type="text"></label>
+    </div>
+    <div>
+        <label>邮箱：</label>
+        <label><input type="text"></label>
+    </div>
+    <div>
+        <label for=""><select name="" id="facList"
+                              data-bind="options:facList, optionsText:'facname',optionsValue:'facno', value:fac, optionsCaption:'--请选择--'"></select></label>
+        <label for=""><select name="" id="DptAList"
+                              data-bind="options:CurrentDptAList, optionsText:'dptname', optionsValue:'dptno', value:DptA, optionsCaption:'请选择'"></select></label>
+        <label for=""><select name="" id="DptBList"
+                              data-bind="options:CurrentDptBList, optionsText:'dptname', optionsValue:'dptno', value:DptB, optionsCaption:'--请选择--'"></select></label>
+    </div>
+
+    <div>
+        <!--Select 的多选-->
+        <label><select name="mult" multiple="multiple" id=""
+                       data-bind="options:DptBList,optionsText:'dptname', optionsValue:'dptno', selectedOptions:mulDptB"></select></label>
+        <label><b data-bind="html:mulDptB"></b></label>
+    </div>
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="knockout-3.5.0.js"></script>
+<script>
+
+    var viewModel = function () {
+        var self = this;
+        self.Name = ko.observable("");
+        self.Email = ko.observable("");
+
+        self.fac = ko.observable("");
+        self.DptA = ko.observable("");
+        self.DptB = ko.observable("");
+
+        /*厂区列表*/
+        var facList = [
+            {facno: 'SZ', facname: '深圳'},
+            {facno: 'CD', facname: '成都'}
+        ];
+        /*处级部门列表*/
+        var DptAList = [
+            {dptno: "TOU501", dptname: "产品制造处", facno: 'SZ'},
+            {dptno: "TOU502", dptname: "经济管理处", facno: 'SZ'},
+            {dptno: "TOU503", dptname: "人力资源处", facno: 'SZ'},
+            {dptno: "TOU504", dptname: "系统开发处", facno: 'CD'},
+            {dptno: "TOU505", dptname: "安全保卫处", facno: 'CD'},
+            {dptno: "TOU506", dptname: "塑艺加工处", facno: 'CD'}
+        ];
+        /*部级部门列表*/
+        var DptBList = [
+            {dptno: 'TOU501-1', dptname: '制造一课', updptno: 'TOU501'},
+            {dptno: 'TOU501-2', dptname: '制造二课', updptno: 'TOU501'},
+            {dptno: 'TOU501-3', dptname: '制造三课', updptno: 'TOU501'},
+            {dptno: 'TOU502-1', dptname: '经管一课', updptno: 'TOU502'},
+            {dptno: 'TOU502-2', dptname: '经管二课', updptno: 'TOU502'},
+            {dptno: 'TOU502-3', dptname: '经管三课', updptno: 'TOU502'},
+            {dptno: 'TOU503-1', dptname: '人力资源课', updptno: 'TOU503'},
+            {dptno: 'TOU504-1', dptname: '系统维护课', updptno: 'TOU504'},
+            {dptno: 'TOU504-2', dptname: '云网开发课', updptno: 'TOU504'},
+            {dptno: 'TOU504-3', dptname: '系统测试课', updptno: 'TOU504'},
+            {dptno: 'TOU505-1', dptname: '警卫课', updptno: 'TOU505'},
+            {dptno: 'TOU505-2', dptname: '安保课', updptno: 'TOU505'},
+            {dptno: 'TOU506-1', dptname: '塑料加工课', updptno: 'TOU506'},
+            {dptno: 'TOU506-2', dptname: '艺术加工课', updptno: 'TOU506'},
+        ];
+
+        self.facList = ko.observableArray(facList);
+        self.DptAList = ko.observableArray(DptAList);
+        self.DptBList = ko.observableArray(DptBList);
+
+        self.CurrentDptAList = ko.computed(function () {
+            return ko.utils.arrayFilter(self.DptAList(), function (dpta) {
+                return dpta.facno === self.fac();
+            })
+        }, self);
+
+        self.CurrentDptBList = ko.computed(function () {
+            return ko.utils.arrayFilter(self.DptBList(), function (dptb) {
+                return dptb.updptno === self.DptA();
+            })
+        }, self);
+
+        /*Select 多选测试*/
+        self.mulDptB = ko.observable("");
+    };
+
+    $(document).ready(function () {
+        var vm = new viewModel();
+        ko.applyBindings(vm);
+    })
+</script>
+</html>

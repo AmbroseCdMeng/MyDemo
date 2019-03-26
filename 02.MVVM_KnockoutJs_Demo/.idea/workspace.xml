@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e7b66b6-0977-4b48-a0c8-46c2860097a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/Demo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
@@ -36,13 +37,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Demo.html">
+        <entry file="file://$PROJECT_DIR$/Demo2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="238" column="81" selection-start-line="238" selection-start-column="81" selection-end-line="238" selection-end-column="81" />
-              <folding>
-                <element signature="e#3639#5424#0" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -63,6 +61,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Demo.html" />
+        <option value="$PROJECT_DIR$/Demo2.html" />
       </list>
     </option>
   </component>
@@ -119,12 +118,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.Demo2.html">
+    <configuration name="Demo2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.MVVM_KnockoutJs_Demo/Demo2.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="Demo.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.MVVM_KnockoutJs_Demo/Demo.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Demo2.html" />
         <item itemvalue="JavaScript Debug.Demo.html" />
       </list>
     </recent_temporary>
@@ -143,12 +146,12 @@
       <workItem from="1553430072157" duration="3527000" />
       <workItem from="1553437805129" duration="3439000" />
       <workItem from="1553523626723" duration="3909000" />
-      <workItem from="1553602827893" duration="588000" />
+      <workItem from="1553602827893" duration="6924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13511000" />
+    <option name="totallyTimeSpent" value="19847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -160,7 +163,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -177,9 +180,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/knockout-3.5.0.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/knockout-3.5.0.debug.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-207" />
@@ -187,11 +187,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="238" column="81" selection-start-line="238" selection-start-column="81" selection-end-line="238" selection-end-column="81" />
+        <state relative-caret-position="-1536">
+          <caret line="21" selection-start-line="21" selection-end-line="22" />
           <folding>
             <element signature="e#3639#5424#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knockout-3.5.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="41" column="270" lean-forward="true" selection-start-line="41" selection-start-column="270" selection-end-line="41" selection-end-column="270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
