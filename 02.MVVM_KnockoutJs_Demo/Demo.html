@@ -89,7 +89,7 @@
 </div>
 <!--两种方式绑定自定义组件-->
 <div id="div8" data-bind="component:'MessageAndList'"></div>
-<div id="div9" data-bind="component:{name:'MessageAndList'}"></div>
+<div id="div9" data-bind="component:{name:'MessageAndList', params:'jerry'}"></div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -234,9 +234,9 @@
             ko.components.register(
                 'MessageAndList',{//第一个参数  自定义组件名
                     //第二个参数  JSON 对象    含 2 个属性     viewModel  template
-                    viewModel:function () {
+                    viewModel:function (params) {
                         var u_self = this;
-                        u_self.Account = ko.observable('CdMeng');
+                        u_self.Account = ko.observable(params != null ? params : 'CdMeng');
                         u_self.MessageText = ko.observable('');
                         u_self.Send = function () {
                             u_self.MessageList.push({account:u_self.Account(),message:u_self.MessageText()});
