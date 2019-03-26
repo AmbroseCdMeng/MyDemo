@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e7b66b6-0977-4b48-a0c8-46c2860097a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
@@ -36,11 +34,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Demo2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="207">
+              <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Demo3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -62,6 +69,7 @@
       <list>
         <option value="$PROJECT_DIR$/Demo.html" />
         <option value="$PROJECT_DIR$/Demo2.html" />
+        <option value="$PROJECT_DIR$/Demo3.html" />
       </list>
     </option>
   </component>
@@ -146,12 +154,12 @@
       <workItem from="1553430072157" duration="3527000" />
       <workItem from="1553437805129" duration="3439000" />
       <workItem from="1553523626723" duration="3909000" />
-      <workItem from="1553602827893" duration="6924000" />
+      <workItem from="1553602827893" duration="7149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19847000" />
+    <option name="totallyTimeSpent" value="20072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -204,8 +212,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Demo2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="207">
+          <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
         </state>
       </provider>
     </entry>
