@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e7b66b6-0977-4b48-a0c8-46c2860097a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Demo3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knockout.validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Demo3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../03.mvc_knockout&amp;bootstrap/mvc_table_demo/.vs/mvc_table_demo/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
@@ -34,20 +36,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Demo2.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Demo3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="161">
+              <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Demo3.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knockout.validation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="287">
+              <caret line="52" column="21" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -61,6 +63,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>applyBindings</find>
+      <find>configuration</find>
+      <find>errorClass</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -69,6 +78,7 @@
       <list>
         <option value="$PROJECT_DIR$/Demo.html" />
         <option value="$PROJECT_DIR$/Demo2.html" />
+        <option value="$PROJECT_DIR$/knockout.validation.js" />
         <option value="$PROJECT_DIR$/Demo3.html" />
       </list>
     </option>
@@ -110,6 +120,9 @@
     <property name="settings.editor.selected.configurable" value="DockerRegistry" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\222.GitHub_upload\02.MVVM_KnockoutJs_Demo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\222.GitHub_upload\02.MVVM_KnockoutJs_Demo" />
     </key>
@@ -126,8 +139,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Demo2.html">
+  <component name="RunManager" selected="JavaScript Debug.Demo3.html">
     <configuration name="Demo2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.MVVM_KnockoutJs_Demo/Demo2.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Demo3.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.MVVM_KnockoutJs_Demo/Demo3.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Demo.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/02.MVVM_KnockoutJs_Demo/Demo.html" useBuiltInWebServerPort="true">
@@ -135,6 +151,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Demo3.html" />
         <item itemvalue="JavaScript Debug.Demo2.html" />
         <item itemvalue="JavaScript Debug.Demo.html" />
       </list>
@@ -154,12 +171,13 @@
       <workItem from="1553430072157" duration="3527000" />
       <workItem from="1553437805129" duration="3439000" />
       <workItem from="1553523626723" duration="3909000" />
-      <workItem from="1553602827893" duration="7149000" />
+      <workItem from="1553602827893" duration="7333000" />
+      <workItem from="1553689167800" duration="8408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20072000" />
+    <option name="totallyTimeSpent" value="28664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -171,7 +189,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955357" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.23995535" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -188,11 +206,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/knockout-3.5.0.debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1536">
@@ -203,24 +216,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/knockout-3.5.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="41" column="270" lean-forward="true" selection-start-line="41" selection-start-column="270" selection-end-line="41" selection-end-column="270" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/knockout.validation.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Demo2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" selection-start-line="9" selection-end-line="16" selection-end-column="10" />
+        <state relative-caret-position="-915">
+          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://code.jquery.com/jquery-3.1.1.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knockout-3.5.0.debug.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knockout-3.5.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="83" column="359" selection-start-line="83" selection-start-column="346" selection-end-line="83" selection-end-column="359" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knockout.validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="52" column="21" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Demo3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="161">
+          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
         </state>
       </provider>
     </entry>
