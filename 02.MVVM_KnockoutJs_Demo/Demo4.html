@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo4</title>
+    <style>
+        .bank ul {
+            padding-left: 70px;
+        }
+
+        .bank li {
+            width: 187px;
+            height: 37px;
+            border: 1px solid #ADC0E2;
+            float: left;
+            margin: 0 10px 10px 0;
+            /*background: url("../02.MVVM_KnockoutJs_Demo/img/工商银行.png") no-repeat right 100px;*/
+            position: relative;
+            cursor: pointer;
+        }
+
+        .bank li:hover {
+            border: 1px solid #FF5D5B;
+        }
+
+        .bank .pf {
+            position: absolute;
+            top: 37px;
+            left: 1px;
+            background-color: #FF5D5B;
+            color: #FFF;
+            width: 189px;
+            height: 19px;
+            font-family: '宋体';
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            z-index: 9;
+            display: none;
+        }
+
+        .bank .bank_gs {
+            /*background-position: 0 -185px;*/
+            background: url("../02.MVVM_KnockoutJs_Demo/img/工商银行.png") no-repeat;
+            background-size: 187px 37px;
+        }
+
+        .bank .bank_js {
+            /*background-position: 0 -444px;*/
+            background: url("../02.MVVM_KnockoutJs_Demo/img/建设银行.png") no-repeat;
+            background-size: 187px 37px;
+        }
+
+        .bank .bank_ny {
+            /*background-position: 0 -1036px;*/
+            background: url("../02.MVVM_KnockoutJs_Demo/img/农业银行.png") no-repeat;
+            background-size: 187px 37px;
+        }
+
+        .bank .bank_zs {
+            /*background-position: 0 -703px;*/
+            background: url("../02.MVVM_KnockoutJs_Demo/img/招商银行.png") no-repeat;
+            background-size: 187px 37px;
+        }
+
+        .bank .bank_zg {
+            /*background-position: 0 -518px;*/
+            background: url("../02.MVVM_KnockoutJs_Demo/img/中国银行.png") no-repeat;
+            background-size: 187px 37px;
+        }
+
+        .bank .bank_zx {
+            /*background-position: 0 -1110px;*/
+            background: url("../02.MVVM_KnockoutJs_Demo/img/邮政储蓄银行.png") no-repeat;
+            background-size: 187px 37px;
+        }
+
+        .bank .bank_gd {
+            /*background-position: 0 -592px;*/
+            background: url("../02.MVVM_KnockoutJs_Demo/img/光大银行.png") no-repeat;
+            background-size: 187px 37px;
+        }
+
+        .supportcardshow {
+            position: absolute;
+            top: 37px;
+            left: -1px;
+            background-color: #FF5D58;
+            color: #FFF;
+            width: 189px;
+            height: 19px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            z-index: 9;
+        }
+
+        .panelshow {
+            display: block;
+        }
+
+        .panelhide {
+            display: none;
+        }
+
+
+    </style>
+    <script src="jquery-2.1.3.js"></script>
+    <script src="knockout-3.5.0.js"></script>
+</head>
+<body>
+<div id="content">
+    <div class="labx">
+        <div class="labc">
+            <div class="lab_cnt">
+                <div class="banklist">
+                    <div class="bank">
+                        <ul>
+                            <!--ko foreach: BankList-->
+                            <li data-bind="attr:{'class':'bank_' + Detail.classname}, event:{'click':$root.ChooseThisCard, 'mouseover':$root.ShowCardSupport, 'mouseout':$root.HideCardSupport}">
+                                <div data-bind="html:'支持'+(Detail.support==11?'储蓄卡、信用卡':'储蓄卡'),attr:{'class':Selected()||Hover()?'supportcardshow':'panelhide'}"></div>
+                            </li>
+                            <!--/ko-->
+                            <li class="bank_more">更多...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+</div>
+<p style="clear: both"></p>
+<hr>
+<div id="detail">选中的信息：
+    <b data-bind="html:SelectedBank().Detail.bankname"></b>
+</div>
+</body>
+<script>
+    const BANKLIST = [
+        {id: 1, bankname: '中国工商银行', bankcode: 3115, classname: 'gs', bankid: 'ICBCB2C', support: 11, selected: false},
+        {id: 2, bankname: '中国建设银行', bankcode: 3115, classname: 'js', bankid: 'CCB', support: 11, selected: false},
+        {id: 3, bankname: '中国农业银行', bankcode: 3115, classname: 'ny', bankid: 'ABC', support: 11, selected: false},
+        {id: 4, bankname: '中国招商银行', bankcode: 3115, classname: 'zs', bankid: 'CMB', support: 11, selected: false},
+        {id: 5, bankname: '中国银行', bankcode: 3115, classname: 'zg', bankid: 'BOCB2C', support: 10, selected: false},
+        {id: 6, bankname: '中国邮政储蓄银行', bankcode: 3115, classname: 'zx', bankid: 'POSTGC', support: 11, selected: false},
+        {id: 7, bankname: '中国光大银行', bankcode: 3115, classname: 'gd', bankid: 'CEBDEBIT', support: 10, selected: false}
+    ];
+
+    var BANKENTITY = function (bankDetail) {
+        var self = this;
+        self.Detail = bankDetail;
+        self.Selected = ko.observable(bankDetail.selected);//选中状态
+        self.Hover = ko.observable(false);//悬浮状态
+    };
+
+    var viewModel = function () {
+        var self = this;
+        self.MappedBankList = function () {
+            var list = new Array();
+            for (var i = 0; i < BANKLIST.length; i++) {
+                list.push(new BANKENTITY(BANKLIST[i]));
+            }
+            return list;
+        };
+        self.BankList = ko.observable(self.MappedBankList());
+
+        /*绑定事件*/
+        self.ChooseThisCard = function (item) {
+            item.Selected(true);
+        };
+        self.ShowCardSupport = function (item) {
+            item.Hover(true);
+        };
+        self.HideCardSupport = function (item) {
+            item.Hover(false);
+        };
+
+        /*选中的信息*/
+        self.SelectedBank = ko.computed(function () {
+            debugger;
+            var selectedBanks = ko.utils.arrayFilter(self.BankList(), function (bank) {
+                debugger;
+                console.log(bank.Selected());
+                return bank.Selected() === true;
+            });
+            if (selectedBanks.length > 0) {
+                console.log(selectedBanks[0].Detail);
+                return selectedBanks[0];
+            } else {
+                return new BANKENTITY({});
+            }
+        }, self)
+    };
+
+    ko.applyBindings(new viewModel());
+</script>
+</html>
