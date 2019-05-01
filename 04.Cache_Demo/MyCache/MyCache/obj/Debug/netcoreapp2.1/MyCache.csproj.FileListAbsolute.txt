@@ -1,0 +1,11 @@
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\bin\Debug\netcoreapp2.1\MyCache.deps.json
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\bin\Debug\netcoreapp2.1\MyCache.runtimeconfig.json
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\bin\Debug\netcoreapp2.1\MyCache.runtimeconfig.dev.json
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\bin\Debug\netcoreapp2.1\MyCache.dll
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\bin\Debug\netcoreapp2.1\MyCache.pdb
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\obj\Debug\netcoreapp2.1\MyCache.csprojAssemblyReference.cache
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\obj\Debug\netcoreapp2.1\MyCache.csproj.CoreCompileInputs.cache
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\obj\Debug\netcoreapp2.1\MyCache.AssemblyInfoInputs.cache
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\obj\Debug\netcoreapp2.1\MyCache.AssemblyInfo.cs
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\obj\Debug\netcoreapp2.1\MyCache.dll
+F:\222.GitHub_upload\04.Cache_Demo\MyCache\MyCache\obj\Debug\netcoreapp2.1\MyCache.pdb
