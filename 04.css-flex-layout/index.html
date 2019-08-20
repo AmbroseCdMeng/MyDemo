@@ -1,0 +1,192 @@
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex-Layout</title>
+
+    <style>
+        .box {
+            width: 100%;
+            height: 60%;
+            border: 1px solid red;
+            background-color: bisque;
+        }
+
+        .item {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid orangered;
+            background-color: red;
+        }
+
+        /* flex 布局 -- 容器 start */
+
+        .box {
+            display: flex;
+            /* display: inline-flex; */
+            /* display: -webkit-flex; */
+            /* display: -webkit-inline-flex; */
+        }
+
+        .box {
+            /* main轴方向 */
+            /* 左 --> 右（默认）*/
+            flex-direction: row;
+            /* 右 --> 左 */
+            /* flex-direction: row-reverse; */
+            /* 上 --> 下 */
+            /* flex-direction: column; */
+            /* 下 --> 上 */
+            /* flex-direction: column-reverse; */
+        }
+
+        .box {
+            /* 轴线上的换行 */
+            /* 不换行 */
+            flex-wrap: nowrap;
+            /* 换行 */
+            /* flex-wrap: wrap; */
+            /* 换行（新行在上） */
+            /* flex-wrap: wrap-reverse; */
+        }
+
+        .box {
+            /* flex-direction & flex-wrap 的简写 */
+            /* flex-flow: row nowrap; */
+        }
+
+        .box {
+            /* main 轴对齐方式 */
+            /* start 对齐 */
+            /* justify-content: flex-start; */
+            /* end 对齐 */
+            /* justify-content: flex-end; */
+            /* 居中对齐 */
+            justify-content: center;
+            /* 两端对齐 */
+            /* justify-content: space-between; */
+            /* 等间隔对齐 */
+            /* justify-content: space-around; */
+        }
+
+        .box {
+            /* cross 轴对齐方式 */
+            /* start 对齐 */
+            /* align-items: flex-start; */
+            /* end 对齐 */
+            /* align-items: flex-end; */
+            /* 居中对齐 */
+            align-items: center;
+            /* item 第一行文字基线对齐 */
+            /* align-items: baseline; */
+            /* 占满容器高度 默认 */
+            /* align-items: stretch; */
+        }
+
+        .box {
+            /* 多根轴线的对齐方式。单个轴时无效 */
+            /* 与 cross 轴 start 对齐 */
+            /* align-content: flex-start; */
+            /* 与 cross 轴 end 对齐 */
+            /* align-content: flex-end; */
+            /* 与 cross 轴 中点 对齐 */
+            /* align-content: center; */
+            /* 与 cross 轴 两端 对齐 */
+            /* align-content: space-between; */
+            /* 每根轴线两侧间隔相等 */
+            /* align-content: space-around; */
+            /* 轴线占满整个 cross 轴 */
+            /* align-content: stretch; */
+        }
+
+        /* flex 布局 -- 容器 end */
+
+
+        /* flex 布局 -- 项目 start */
+        /* 排序 */
+        .item {
+            order: 1;
+        }
+
+        /* 放大比例（默认0，空间剩余时，不自动放大） */
+        .item {
+            /* flex-grow: 600px; */
+        }
+
+        /* 缩小比例（默认1，空间不足时，自动缩小 */
+        .item {
+            flex-shrink: 50px;
+        }
+
+        /* 分配多余空间之前 item 占 main 轴的空间（设置长度将占据固定空间，默认 auto */
+        .item {
+            flex-basis: 50px;
+        }
+
+        /* flex-grow & flwx-shrink & flex-basis 的缩写（默认 0 1 auto。 auto 等于 1 1 auto。 none 等于 0 0 auto） */
+        .item {
+            /* flex: 0 1 auto; */
+            /* flex: auto; */
+            float: none;
+        }
+
+        /* 允许单个 item 与其他 item 对齐方式不同 */
+        .item {
+            align-self: auto
+        }
+
+        /* flex 布局 -- 项目 end */
+    </style>
+</head>
+
+<body>
+    <h1>Flex 布局</h1>
+    <div class="box">
+        <div class="item"></div>
+    </div>
+
+    <p>容器默认存在两根轴，水平(main axis) 和 垂直(cross axis)</p>
+    <p>水平轴起止位置 main start 、 main end</p>
+    <p>垂直轴起止位置 cross start 、 cross end</p>
+
+    <h2>容器属性</h2>
+    <ul>
+        <li>flex-direction</li>
+        决定main轴方向
+        <li>flex-wrap</li>
+        轴线上的换行
+        <li>flex-flow</li>
+        flex-direction & flex-wrap 的简写
+        <li>justify-content</li>
+        main 轴对齐方式
+        <li>align-items</li>
+        cross 轴对齐方式
+        <li>align-content</li>
+        多根轴线的对齐方式。单个轴时无效
+    </ul>
+
+    <h2>项目属性</h2>
+    <ul>
+        <li>order</li>
+        项目排序
+        <li>flex-grow</li>
+        放大比例（默认0，空间剩余时，不自动放大）
+        <li>flex-shrink</li>
+        缩小比例（默认1，空间不足时，自动缩小）
+        <li>flex-batis</li>
+        分配多余空间之前 item 占 main 轴的空间（设置长度将占据固定空间，默认 auto）
+        <li>flex</li>
+        flex-grow & flwx-shrink & flex-basis 的缩写（默认 0 1 auto。 auto 等于 1 1 auto。 none 等于 0 0 auto）
+        <li>align-self</li>
+        允许单个 item 与其他 item 对齐方式不同，可覆盖 align-items。（默认 auto 表示继承父元素或 stretch）
+
+    </ul>
+</body>
+
+</html>
