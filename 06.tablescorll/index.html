@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>table-auto-scroll</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <style>
+      body {
+        height: 100%;
+        width: 99%;
+      }
+
+      div {
+        height: 300px;
+        width: 100%;
+        overflow-y: auto;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 1px solid #666;
+      }
+
+      tr td {
+        border: 1px solid #666;
+        width: 120px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="scroll-div1">
+      <table id="table1"></table>
+    </div>
+    <br />
+    <div id="scroll-div2">
+      <table id="table2" v-for="(item, index) in list" :key="item.id">
+        <tr>
+          <td>{{ item.Columns0 }}</td>
+          <td>{{ item.Columns1 }}</td>
+          <td>{{ item.Columns3 }}</td>
+          <td>{{ item.Columns4 }}</td>
+          <td>{{ item.Columns5 }}</td>
+          <td>{{ item.Columns6 }}</td>
+          <td>{{ item.Columns7 }}</td>
+          <td>{{ item.Columns8 }}</td>
+          <td>{{ item.Columns9 }}</td>
+          <td>{{ item.Columns10 }}</td>
+          <td>{{ item.Columns11 }}</td>
+          <td>{{ item.Columns12 }}</td>
+          <td>{{ item.Columns13 }}</td>
+          <td>{{ item.Columns14 }}</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      var timer;
+      $(function() {
+        initTable("table1", 60, 14);
+
+        timer = setInterval(function() {
+          autoscroll("scroll-div1", 500);
+        }, 10);
+      });
+
+      function initTable(eleId, row, col) {
+        var $table = $(`#${eleId}`);
+        for (let i = 0; i < row; i++) {
+          let $tr = $(`<tr></tr>`);
+          for (let j = 0; j < col; j++) {
+            let $td = $(`<td>Rows-${i}  Columns-${j}</td>`);
+            $tr.append($td);
+          }
+          $table.append($tr);
+        }
+      }
+
+      function autoscroll(eleId, speed) {
+        const ele = $(`#${eleId}`);
+        ele.scrollTop(ele.scrollTop() + 1);
+        if (ele.scrollTop() + ele.height() >= ele.get(0).scrollHeight) {
+          ele.scrollTop(0);
+          //clearInterval(timer);
+        }
+      }
+    </script>
+    <script>
+      var vue = new Vue({
+        el: "#scroll-div2",
+        data() {
+          return {
+            list: [],
+            timer: null
+          };
+        },
+        methods: {
+          initTable(eleId, row, col) {
+            for (let i = 0; i < row; i++) {
+              const obj = {};
+              for (let j = 0; j < col; j++) {
+                obj["Columns" + j] = `Rows-${i}  Columns-${j}`;
+              }
+              this.list.push(obj);
+            }
+          },
+          autoscroll(speed) {
+            this.timer = setInterval(() => {
+              this.list.push(this.list.shift());
+            }, speed);
+          }
+        },
+        created() {
+          this.initTable("table2", 60, 15);
+          this.autoscroll(1000);
+        },
+        destroyed() {
+          clearInterval(this.timer);
+        }
+      });
+    </script>
+  </body>
+</html>
