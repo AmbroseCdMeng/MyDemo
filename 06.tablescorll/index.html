@@ -35,34 +35,13 @@
     <div id="scroll-div1">
       <table id="table1"></table>
     </div>
-    <br />
-    <div id="scroll-div2">
-      <table id="table2" v-for="(item, index) in list" :key="item.id">
-        <tr>
-          <td>{{ item.Columns0 }}</td>
-          <td>{{ item.Columns1 }}</td>
-          <td>{{ item.Columns3 }}</td>
-          <td>{{ item.Columns4 }}</td>
-          <td>{{ item.Columns5 }}</td>
-          <td>{{ item.Columns6 }}</td>
-          <td>{{ item.Columns7 }}</td>
-          <td>{{ item.Columns8 }}</td>
-          <td>{{ item.Columns9 }}</td>
-          <td>{{ item.Columns10 }}</td>
-          <td>{{ item.Columns11 }}</td>
-          <td>{{ item.Columns12 }}</td>
-          <td>{{ item.Columns13 }}</td>
-          <td>{{ item.Columns14 }}</td>
-        </tr>
-      </table>
-    </div>
     <script>
       var timer;
       $(function() {
         initTable("table1", 60, 14);
 
         timer = setInterval(function() {
-          autoscroll("scroll-div1", 500);
+          autoscroll("scroll-div1", 1);//这里 1 调整为 td 高度时效果如第二个表格
         }, 10);
       });
 
@@ -80,46 +59,14 @@
 
       function autoscroll(eleId, speed) {
         const ele = $(`#${eleId}`);
-        ele.scrollTop(ele.scrollTop() + 1);
+        ele.scrollTop(ele.scrollTop() + speed);
         if (ele.scrollTop() + ele.height() >= ele.get(0).scrollHeight) {
           ele.scrollTop(0);
           //clearInterval(timer);
         }
       }
     </script>
-    <script>
-      var vue = new Vue({
-        el: "#scroll-div2",
-        data() {
-          return {
-            list: [],
-            timer: null
-          };
-        },
-        methods: {
-          initTable(eleId, row, col) {
-            for (let i = 0; i < row; i++) {
-              const obj = {};
-              for (let j = 0; j < col; j++) {
-                obj["Columns" + j] = `Rows-${i}  Columns-${j}`;
-              }
-              this.list.push(obj);
-            }
-          },
-          autoscroll(speed) {
-            this.timer = setInterval(() => {
-              this.list.push(this.list.shift());
-            }, speed);
-          }
-        },
-        created() {
-          this.initTable("table2", 60, 15);
-          this.autoscroll(1000);
-        },
-        destroyed() {
-          clearInterval(this.timer);
-        }
-      });
-    </script>
   </body>
 </html>
+
+
