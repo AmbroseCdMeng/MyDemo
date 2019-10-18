@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Echart</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.3.0-rc.2/echarts-en.js"></script>
+    <style>
+      .container {
+        width: 1800px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="container"></div>
+    <script>
+      var option = {
+        xAxis: [
+          {
+            type: "category",
+            data: []
+          }
+        ],
+        yAxis: [
+          {
+            type: "value",
+            min: 0,
+            max: 100
+          }
+        ],
+        series: [
+          {
+            data: [],
+            type: "line"
+          }
+        ]
+      };
+
+      $(function() {
+        _echart = echarts.init(document.getElementById("container"));
+
+        /*默认初始数据*/
+        var rData = randomData(20);
+        option.xAxis[0].data = option.xAxis[0].data.concat(rData.xData);
+        option.series[0].data = option.series[0].data.concat(rData.yData);
+
+        _echart.setOption(option);
+        /*end*/
+
+        /*移除前 n 条数据，加入新 n 条数据*/
+        setInterval(() => {
+          let rData = randomData(1);
+
+          let option = _echart.getOption();
+          console.log(option.xAxis[0].data.length);
+          shiftArr(option.xAxis[0].data, rData.xData.length);
+          option.xAxis[0].data = option.xAxis[0].data.concat(rData.xData);
+
+          shiftArr(option.series[0].data, rData.yData.length);
+          option.series[0].data = option.series[0].data.concat(rData.yData);
+
+          _echart.setOption(option);
+        }, 100);
+        /*end*/
+      });
+
+      function randomData(len) {
+        const now = new Date();
+        let data = {
+          xData: [],
+          yData: []
+        };
+        for (let i = 0; i < len; i++) {
+          data.xData.push(`${now.getMinutes()}:${now.getSeconds()}`);
+          data.yData.push(Math.random() * 100);
+        }
+        return data;
+      }
+
+      function shiftArr(arr, len) {
+        for (let i = 0; i < len; i++) {
+          arr.shift();
+        }
+      }
+    </script>
+  </body>
+</html>
